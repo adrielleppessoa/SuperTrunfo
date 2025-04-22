@@ -3,9 +3,11 @@
 int main (){
 
     char estado;
-    
+
 
     // carta 1
+
+    printf("SUPER TRUNFO\n");
 
     printf("Carta 1\n");
 
