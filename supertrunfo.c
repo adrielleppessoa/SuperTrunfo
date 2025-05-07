@@ -11,6 +11,7 @@ int main (){
     int pontosturisticos1;
     float densipopula1;
     float pibpercapita1;
+    float superpoder1;
 
     printf("SUPER TRUNFO\n");
     printf("\n");   
@@ -41,8 +42,9 @@ int main (){
     printf("Digite o número de pontos turísticos da cidade: \n");
     scanf("%d", &pontosturisticos1);
 
-    densipopula1 = populacao1 / area1
-    pibpercapita1 = pib1 / populacao1
+    densipopula1 = (float) populacao1/area1;
+    pibpercapita1 = (float) pib1/populacao1;
+    superpoder1 = (float) populacao1+area1+pib1+pontosturisticos1+pibpercapita1-densipopula1;
 
     char estado2[12];
     char codigo2[10];
@@ -53,6 +55,7 @@ int main (){
     int pontosturisticos2;
     float densipopula2;
     float pibpercapita2;
+    float superpoder2;
 
 // carta 2
 
@@ -85,8 +88,9 @@ int main (){
     printf("SUPER TRUNFO - CARTAS CADASTRADAS COM SUCESSO");
     printf("\n");
 
-    densipopula2 = populacao2 / area2
-    pibpercapita2 = pib2 / populacao2
+    densipopula2 = (float) populacao2/area2;
+    pibpercapita2 = (float) pib2/populacao2;
+    superpoder2 = (float) populacao2+area2+pib2+pontosturisticos2+pibpercapita2-densipopula2;
 
     printf("\n");
     printf("Carta 1: \n");
@@ -110,8 +114,8 @@ int main (){
     printf("Densidade Populacional: %.2f", densipopula1);
     printf(" hab/Km² %s");
     printf("\n");
-    printf(" PIB per Capita: %.2f", pibpercapita1);
-    printf("reais %s");
+    printf("PIB per Capita: %.2f", pibpercapita1);
+    printf(" reais %s");
     printf("\n");
 
 
@@ -137,8 +141,8 @@ int main (){
     printf("Densidade Populacional: %.2f", densipopula2);
     printf(" hab/Km² %s");
     printf("\n");
-    printf(" PIB per Capita: %.2f", pibpercapita2);
-    printf("reais %s");
+    printf("PIB per Capita: %.2f", pibpercapita2);
+    printf(" reais %s");
     printf("\n");
     printf("\n");
 
