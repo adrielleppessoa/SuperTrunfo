@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <termios.h>
+#include <unistd.h>
+
 
 int main (){
 
@@ -320,6 +323,15 @@ int main (){
 
     int opcao;
     int atributo;
+    int voltar;
+
+    void esconderentrada(){
+        struct termios oldt, newt;
+    tcgetattr(STDIN_FILENO, &oldt);          // Salva configurações atuais
+    newt = oldt;
+    newt.c_lflag &= ~(ECHO);                 // Desativa o echo
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt); // Aplica mudanças
+    }
 
     printf("\n---- MENU ----\n");
     printf("Escolha uma opção:\n");
@@ -328,12 +340,16 @@ int main (){
     printf("1. Iniciar Jogo\n");
     printf("2. Ver Regras\n");
     printf("3. Sair\n");
+
+    esconderentrada();
     scanf("%d", &opcao);
+
 
     switch(opcao)
     {
 
         case 1: 
+        printf("\n");
         printf("Iniciando o jogo...\n");
         printf("\n");
 
@@ -352,6 +368,7 @@ int main (){
                 
                 if(populacao1>populacao2)
                 {
+                    printf("\n");
                     printf("Carta 1 é a vencedora!!\n"); }
 
                     else {
@@ -360,6 +377,7 @@ int main (){
                 }
              
                 else if (atributo == 2) {
+                    printf("\n");
                     printf("Você escolheu: Área\n");
 
                     if(area1>area2)
@@ -373,6 +391,7 @@ int main (){
         
 
                 else if (atributo == 3) {
+                    printf("\n");
                     printf("Você escolheu: PIB\n");
 
                     if(pib1>pib2)
@@ -388,28 +407,36 @@ int main (){
 
             
             else if (atributo == 4) {
+                printf("\n");
                     printf("Você escolheu: Pontos Turísticos\n");
 
                     if(pontosturisticos1>pontosturisticos2)
                 {
                     printf("Carta 1 é a vencedora!!\n"); }
 
-                    else {
+                    else if (pontosturisticos1<pontosturisticos2) {
                         printf("Carta 2 é a vencedora!!\n");
+                    }
+                    else {
+                        printf("EMPATE");
                     }
 
         
     }
 
             else if (atributo == 5) {
+                printf("\n");
                     printf("Você escolheu: Densidade Demográfica\n");
 
                     if(densipopula1<densipopula2)
                 {
                     printf("Carta 1 é a vencedora!!\n"); }
 
-                    else {
+                    else if (densipopula1>densipopula2) {
                         printf("Carta 2 é a vencedora!!\n");
+                    }
+                    else {
+                        printf("EMPATE");
                     }
                 }
             
@@ -423,18 +450,29 @@ int main (){
         while (atributo < 1 || atributo > 5);
         break;
 
-        case 2:
+        case 2: {
+        printf("\n");
         printf("Regras do Jogo:\n");
         printf("\n"); 
 
         printf("Regra 1: Você deverá escolher apenas 1(um) ATRIBUTO.\n");
         printf("Regra 2: As CARTAS serão comparadas em relação ao ATRIBUTO escolhido. \n");
         printf("Regra 3: Vence a CARTA com maior valor nos seguintes ATRIBUTOS: População, Área, PIB e Pontos Turísticos. \n");
-        printf("Regra 5: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
+        printf("Regra 4: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
+        
+        printf("\nDigite a tecla '0' para voltar ao menu...");
+                getchar(); // captura o '\n' deixado no buffer pelo scanf
+                getchar(); // espera o usuário apertar ENTER
+
+                scanf(" %d", &voltar);
+                }
+
+                while(voltar !=0);
 
         break;
 
         case 3:
+        printf("\n");
         printf("Saindo do jogo...\n");
         break;
 
