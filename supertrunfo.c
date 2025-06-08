@@ -26,13 +26,13 @@ int main (){
     printf("\n");
 
     printf("Digite o nome do estado: \n");
-    scanf("%s", &estado1);
+    scanf("%s", estado1);
 
     printf("Digite o código da carta com três caracteres, sendo o primeiro a letra inicial do estado e os dois outros serão números (exemplo: estado é Maranhão, código M01): \n");
-    scanf("%s", &codigo1);
+    scanf("%s", codigo1);
 
     printf("Digite o nome da cidade: \n");
-    scanf("%s", &cidade1);
+    scanf("%s", cidade1);
 
     printf("Digite o número de habitantes da cidade (sem pontuações): \n");
     scanf("%lu", &populacao1);
@@ -74,13 +74,13 @@ int main (){
     printf("\n");
 
     printf("Digite o nome do estado: \n");
-    scanf("%s", &estado2);
+    scanf(" %s", estado2);
 
     printf("Digite o código da carta com três caracteres, sendo o primeiro a letra inicial do estado e os dois outros serão números (exemplo: estado é Maranhão, código M01): \n");
-    scanf("%s", &codigo2);
+    scanf("%s", codigo2);
 
     printf("Digite o nome da cidade: \n");
-    scanf("%s", &cidade2);
+    scanf("%s", cidade2);
 
     printf("Digite o número de habitantes da cidade (sem pontuações): \n");
     scanf("%lu", &populacao2);
@@ -118,18 +118,18 @@ int main (){
     printf("População: %lu", populacao1);
     printf("\n");
     printf("Área: %.2f", area1);
-    printf(" Km² %s");
+    printf(" Km²");
     printf("\n");
     printf("PIB: %.2f", pib1);
-    printf(" bilhões de reais %s");
+    printf(" bilhões de reais");
     printf("\n");
     printf("Número de Pontos Turísticos: %d", pontosturisticos1);
     printf("\n");
     printf("Densidade Populacional: %.2f", densipopula1);
-    printf(" hab/Km² %s");
+    printf(" hab/Km²");
     printf("\n");
     printf("PIB per Capita: %.2f", pibpercapita1);
-    printf(" reais %s");
+    printf(" reais");
     printf("\n");
     printf("Super Poder: %.2f", superpoder1);
     printf("\n");
@@ -148,24 +148,24 @@ int main (){
     printf("População: %lu", populacao2);
     printf("\n");
     printf("Área: %.2f", area2);
-    printf(" Km² %s");
+    printf(" Km²");
     printf("\n");
     printf("PIB: %.2f", pib2);
-    printf(" bilhões de reais %s");
+    printf(" bilhões de reais");
     printf("\n");
     printf("Número de Pontos Turísticos: %d", pontosturisticos2);
     printf("\n");
     printf("Densidade Populacional: %.2f", densipopula2);
-    printf(" hab/Km² %s");
+    printf(" hab/Km²");
     printf("\n");
     printf("PIB per Capita: %.2f", pibpercapita2);
-    printf(" reais %s");
+    printf(" reais");
     printf("\n");
     printf("Super Poder: %.2f", superpoder2);
     printf("\n");
     printf("\n");
 
-    // mostrando os resultados da comparação de cartas 
+    /* mostrando os resultados da comparação de cartas 
 
     printf("\n");
     printf("COMPARAÇÃO DE CARTAS (Atributo: População):");
@@ -316,7 +316,145 @@ int main (){
     printf("\n");
     printf("\n");
 
+    */
 
+    int opcao;
+    int atributo;
+
+    printf("\n---- MENU ----\n");
+    printf("Escolha uma opção:\n");
+    printf("\n");
+
+    printf("1. Iniciar Jogo\n");
+    printf("2. Ver Regras\n");
+    printf("3. Sair\n");
+    scanf("%d", &opcao);
+
+    switch(opcao)
+    {
+
+        case 1: 
+        printf("Iniciando o jogo...\n");
+        printf("\n");
+
+        printf("Escolha o atributo para comparação:\n");
+        printf("\n"); 
+
+        printf("1. População\n");
+        printf("2. Área\n");
+        printf("3. PIB\n");
+        printf("4. Números de pontos turísticos\n");
+        printf("5. Densidade demográfica\n");
+        scanf("%d", &atributo);
+
+             if (atributo == 1)
+             {  printf("Você escolheu: População\n");
+                
+                if(populacao1>populacao2)
+                {
+                    printf("Carta 1 é a vencedora!!\n"); }
+
+                    else {
+                        printf("Carta 2 é a vencedora!!\n");
+                    }
+                }
+             
+                else if (atributo == 2) {
+                    printf("Você escolheu: Área\n");
+
+                    if(area1>area2)
+                {
+                    printf("Carta 1 é a vencedora!!\n"); }
+
+                    else {
+                        printf("Carta 2 é a vencedora!!\n");
+                    }
+                }
+        
+
+                else if (atributo == 3) {
+                    printf("Você escolheu: PIB\n");
+
+                    if(pib1>pib2)
+                {
+                    printf("Carta 1 é a vencedora!!\n");}
+
+                    else {
+                        printf("Carta 2 é a vencedora!!\n");
+                    }
+
+                }
+
+
+            
+            else if (atributo == 4) {
+                    printf("Você escolheu: Pontos Turísticos\n");
+
+                    if(pontosturisticos1>pontosturisticos2)
+                {
+                    printf("Carta 1 é a vencedora!!\n"); }
+
+                    else {
+                        printf("Carta 2 é a vencedora!!\n");
+                    }
+
+        
+    }
+
+            else if (atributo == 5) {
+                    printf("Você escolheu: Densidade Demográfica\n");
+
+                    if(densipopula1<densipopula2)
+                {
+                    printf("Carta 1 é a vencedora!!\n"); }
+
+                    else {
+                        printf("Carta 2 é a vencedora!!\n");
+                    }
+                }
+            
+        
+        else {
+            printf("Opção inválida: tente novamente");
+
+
+        
+    }
+        while (atributo < 1 || atributo > 5);
+        break;
+
+        case 2:
+        printf("Regras do Jogo:\n");
+        printf("\n"); 
+
+        printf("Regra 1: Você deverá escolher apenas 1(um) ATRIBUTO.\n");
+        printf("Regra 2: As CARTAS serão comparadas em relação ao ATRIBUTO escolhido. \n");
+        printf("Regra 3: Vence a CARTA com maior valor nos seguintes ATRIBUTOS: População, Área, PIB e Pontos Turísticos. \n");
+        printf("Regra 5: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
+
+        break;
+
+        case 3:
+        printf("Saindo do jogo...\n");
+        break;
+
+        default:
+                printf("Opção inválida. Tente novamente.\n");
+                break;
+
+    }
+    while(opcao!=3);
+    
     return 0;
+    
+
+
+
+
+
+    
+
+
 
 }
+
