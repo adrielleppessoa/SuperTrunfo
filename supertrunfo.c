@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <termios.h>
-#include <unistd.h>
 
 
 int main (){
@@ -49,6 +47,8 @@ int main (){
     printf("Digite o número de pontos turísticos da cidade: \n");
     scanf("%d", &pontosturisticos1);
 
+    // incluindo as variáves da carta 2
+
     char estado2[12];
     char codigo2[10];
     char cidade2[10];
@@ -62,7 +62,7 @@ int main (){
 
      // solicitando os dados da carta 2 ao usuário 
 
-// carta 2
+    // carta 2
 
     printf("\n");
     printf("Carta 2\n");
@@ -160,7 +160,7 @@ int main (){
     printf("\n");
     printf("\n");
 
-    /* mostrando os resultados da comparação de cartas 
+    /* mostrando os resultados da comparação de cartas - desafio novato (Super Trunfo 2) 
 
     printf("\n");
     printf("COMPARAÇÃO DE CARTAS (Atributo: População):");
@@ -313,17 +313,12 @@ int main (){
 
     */
 
+    // Comparando as cartas utilizando switch e if else aninhado - Super Trunfo 2 Nível Aventureiro
+
+    // variáveis utilizadas na switch e imprimindo infos para o usuário
+
     int opcao;
     int atributo;
-    int voltar;
-
-    void esconderentrada(){
-        struct termios oldt, newt;
-    tcgetattr(STDIN_FILENO, &oldt);          // Salva configurações atuais
-    newt = oldt;
-    newt.c_lflag &= ~(ECHO);                 // Desativa o echo
-    tcsetattr(STDIN_FILENO, TCSANOW, &newt); // Aplica mudanças
-    }
 
     printf("\n---- MENU ----\n");
     printf("Escolha uma opção:\n");
@@ -333,55 +328,58 @@ int main (){
     printf("2. Ver Regras\n");
     printf("3. Sair\n");
 
-    esconderentrada();
     scanf("%d", &opcao);
 
+        // Iniciando a switch com 3 casos
 
-    switch(opcao)
-    {
+        switch(opcao)
+        {
 
-        case 1: 
-        printf("\n");
-        printf("Iniciando o jogo...\n");
-        printf("\n");
+            // Caso 1 - iniciando o jogo e utilizando if else aninhado para selecionar o atributo escolhido e comparar as cartas
 
-        printf("Escolha o atributo para comparação:\n");
-        printf("\n"); 
+            case 1: 
+            printf("\n");
+            printf("Iniciando o jogo...\n");
+            printf("\n");
 
-        printf("1. População\n");
-        printf("2. Área\n");
-        printf("3. PIB\n");
-        printf("4. Números de pontos turísticos\n");
-        printf("5. Densidade demográfica\n");
-        scanf("%d", &atributo);
+            printf("Escolha o atributo para comparação:\n");
+            printf("\n"); 
 
-             if (atributo == 1)
-             {  printf("Você escolheu: População\n");
-                
-                if(populacao1>populacao2)
-                {
-                    printf("\n");
-                    printf("Carta 1 é a vencedora!!\n"); }
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Números de pontos turísticos\n");
+            printf("5. Densidade demográfica\n");
+            scanf("%d", &atributo);
 
-                    else if (populacao1<populacao2) {
-                        printf("Carta 2 é a vencedora!!\n");
-                    }
-                     else {
-                        printf("EMPATE!!");
-                     }}
-                
-             
+                if (atributo == 1) {
+                    printf("Você escolheu: População\n");
+
+                        if (populacao1 > populacao2) {
+                            printf("\nCarta 1 é a vencedora!!\n");}
+                               
+                        else if (populacao1 < populacao2) {
+                            printf("Carta 2 é a vencedora!!\n");}
+                     
+                        else {
+                            printf("EMPATE!!\n");
+    }
+}
+                             
                 else if (atributo == 2) {
                     printf("\n");
                     printf("Você escolheu: Área\n");
 
-                    if(area1>area2)
-                {
-                    printf("Carta 1 é a vencedora!!\n"); }
+                        if(area1>area2){
+                
+                            printf("Carta 1 é a vencedora!!\n"); }
 
-                    else {
-                        printf("Carta 2 é a vencedora!!\n");
-                    }
+                        else if (area1 < area2) {
+                            printf("Carta 2 é a vencedora!!\n");}
+                     
+                        else {
+                            printf("EMPATE!!\n");}
+                    
                 }
         
 
@@ -389,97 +387,91 @@ int main (){
                     printf("\n");
                     printf("Você escolheu: PIB\n");
 
-                    if(pib1>pib2)
-                {
-                    printf("Carta 1 é a vencedora!!\n");}
+                        if(pib1>pib2) {
+                
+                            printf("Carta 1 é a vencedora!!\n");}
 
-                    else {
-                        printf("Carta 2 é a vencedora!!\n");
-                    }
+                        else if (pib1 < pib2) {
+                            printf("Carta 2 é a vencedora!!\n");}
+                     
+                        else {
+                            printf("EMPATE!!\n");
 
                 }
+            }
 
 
             
-            else if (atributo == 4) {
-                printf("\n");
+                else if (atributo == 4) {
+                    printf("\n");
                     printf("Você escolheu: Pontos Turísticos\n");
 
-                    if(pontosturisticos1>pontosturisticos2)
+                        if(pontosturisticos1>pontosturisticos2)
                 {
-                    printf("Carta 1 é a vencedora!!\n"); }
+                            printf("Carta 1 é a vencedora!!\n"); }
 
-                    else if (pontosturisticos1<pontosturisticos2) {
-                        printf("Carta 2 é a vencedora!!\n");
+                        else if (pontosturisticos1 < pontosturisticos2) {
+                            printf("Carta 2 é a vencedora!!\n");}
+                     
+                        else {
+                            printf("EMPATE!!\n");;
                     }
-                    else {
-                        printf("EMPATE");
-                    }
+                }
 
         
-    }
 
-            else if (atributo == 5) {
-                printf("\n");
+
+                else if (atributo == 5) {
+                    printf("\n");
                     printf("Você escolheu: Densidade Demográfica\n");
 
-                    if(densipopula1<densipopula2)
+                        if(densipopula1<densipopula2)
                 {
-                    printf("Carta 1 é a vencedora!!\n"); }
+                            printf("Carta 1 é a vencedora!!\n"); }
 
-                    else if (densipopula1>densipopula2) {
-                        printf("Carta 2 é a vencedora!!\n");
-                    }
-                    else {
-                        printf("EMPATE");
+                        else if (densipopula1 > densipopula2) {
+                            printf("Carta 2 é a vencedora!!\n");}
+                     
+                        else {
+                            printf("EMPATE!!\n");
                     }
                 }
             
         
-        else {
-            printf("Opção inválida: tente novamente");
+                else {
+                    printf("Opção inválida: tente novamente");
 
 
         
     }
-        while (atributo < 1 || atributo > 5);
-        break;
+            break;
 
-        case 2: {
-        printf("\n");
-        printf("Regras do Jogo:\n");
-        printf("\n"); 
+            case 2: {
+            printf("\n");
+            printf("Regras do Jogo:\n");
+            printf("\n"); 
 
-        printf("Regra 1: Você deverá escolher apenas 1(um) ATRIBUTO.\n");
-        printf("Regra 2: As CARTAS serão comparadas em relação ao ATRIBUTO escolhido. \n");
-        printf("Regra 3: Vence a CARTA com maior valor nos seguintes ATRIBUTOS: População, Área, PIB e Pontos Turísticos. \n");
-        printf("Regra 4: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
+            printf("Regra 1: Você deverá escolher apenas 1(um) ATRIBUTO.\n");
+            printf("Regra 2: As CARTAS serão comparadas em relação ao ATRIBUTO escolhido. \n");
+            printf("Regra 3: Vence a CARTA com maior valor nos seguintes ATRIBUTOS: População, Área, PIB e Pontos Turísticos. \n");
+            printf("Regra 4: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
 
-        break;
+            break;
 
-        case 3:
-        printf("\n");
-        printf("Saindo do jogo...\n");
-        break;
+            case 3:
+            printf("\n");
+            printf("Saindo do jogo...\n");
+            break;
 
-        default:
+            default:
                 printf("Opção inválida. Tente novamente.\n");
                 break;
 
     }
 }
-    while(opcao!=3);
     
     return 0;
-    
-
-
-
-
-
-    
-
-
+  
 
 }
 
