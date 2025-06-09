@@ -49,14 +49,6 @@ int main (){
     printf("Digite o número de pontos turísticos da cidade: \n");
     scanf("%d", &pontosturisticos1);
 
-    // calculo da densidade, pib per capita e superpoder carta 1
-
-    densipopula1 = (float) populacao1/area1;
-    pibpercapita1 = (float) pib1/populacao1;
-    superpoder1 = (float) populacao1+area1+pib1+pontosturisticos1+pibpercapita1-densipopula1;
-
-    // incluindo as variáves da carta 2
-
     char estado2[12];
     char codigo2[10];
     char cidade2[10];
@@ -371,10 +363,13 @@ int main (){
                     printf("\n");
                     printf("Carta 1 é a vencedora!!\n"); }
 
-                    else {
+                    else if (populacao1<populacao2) {
                         printf("Carta 2 é a vencedora!!\n");
                     }
-                }
+                     else {
+                        printf("EMPATE!!");
+                     }}
+                
              
                 else if (atributo == 2) {
                     printf("\n");
@@ -459,15 +454,6 @@ int main (){
         printf("Regra 2: As CARTAS serão comparadas em relação ao ATRIBUTO escolhido. \n");
         printf("Regra 3: Vence a CARTA com maior valor nos seguintes ATRIBUTOS: População, Área, PIB e Pontos Turísticos. \n");
         printf("Regra 4: Apenas no ATRIBUTO: Densidade Demográfica VENCE a CARTA com menor valor.\n");
-        
-        printf("\nDigite a tecla '0' para voltar ao menu...");
-                getchar(); // captura o '\n' deixado no buffer pelo scanf
-                getchar(); // espera o usuário apertar ENTER
-
-                scanf(" %d", &voltar);
-                }
-
-                while(voltar !=0);
 
         break;
 
@@ -481,6 +467,7 @@ int main (){
                 break;
 
     }
+}
     while(opcao!=3);
     
     return 0;
