@@ -353,7 +353,16 @@ int main (){
             scanf("%d", &atributo);
 
                 if (atributo == 1) {
-                    printf("Você escolheu: População\n");
+                    printf("\nOs estados escolhidos:  %s", estado1);
+                    printf(" e %s", estado2);
+                    printf("\n");
+                    printf("O atributo escolhido: População\n");
+                    printf("População de %s", estado1);
+                    printf(": %.2d \n", populacao1);
+                    printf("População de %s", estado2);
+                    printf(": %.2d \n", populacao2);
+                    printf("\n");
+
 
                         if (populacao1 > populacao2) {
                             printf("\nCarta 1 é a vencedora!!\n");}
@@ -362,13 +371,21 @@ int main (){
                             printf("Carta 2 é a vencedora!!\n");}
                      
                         else {
-                            printf("EMPATE!!\n");
+                            printf("EMPATE!!\n\n");
     }
 }
                              
                 else if (atributo == 2) {
                     printf("\n");
-                    printf("Você escolheu: Área\n");
+                    printf("\nOs estados escolhidos:  %s", estado1);
+                    printf(" e %s", estado2);
+                    printf("\n");
+                    printf("O atributo escolhido: Área\n");
+                    printf("Área de %s", estado1);
+                    printf(": %.2d \n", area1);
+                    printf("Área de %s", estado2);
+                    printf(": %.2d \n", area2);
+                    printf("\n");
 
                         if(area1>area2){
                 
@@ -385,7 +402,15 @@ int main (){
 
                 else if (atributo == 3) {
                     printf("\n");
-                    printf("Você escolheu: PIB\n");
+                    printf("\nOs estados escolhidos:  %s", estado1);
+                    printf(" e %s", estado2);
+                    printf("\n");
+                    printf("O atributo escolhido: PIB\n");
+                    printf("PIB de %s", estado1);
+                    printf(": %.2d \n", pib1);
+                    printf("PIB de %s", estado2);
+                    printf(": %.2d \n", pib2);
+                    printf("\n");
 
                         if(pib1>pib2) {
                 
@@ -404,7 +429,15 @@ int main (){
             
                 else if (atributo == 4) {
                     printf("\n");
-                    printf("Você escolheu: Pontos Turísticos\n");
+                    printf("\nOs estados escolhidos:  %s", estado1);
+                    printf(" e %s", estado2);
+                    printf("\n");
+                    printf("O atributo escolhido: Pontos Turísticos\n");
+                    printf("N. de Pontos Turísticos de %s", estado1);
+                    printf(": %.2d \n", pontosturisticos1);
+                    printf("N. de Pontos Turísticos de %s", estado2);
+                    printf(": %.2d \n", pontosturisticos2);
+                    printf("\n");
 
                         if(pontosturisticos1>pontosturisticos2)
                 {
@@ -423,7 +456,15 @@ int main (){
 
                 else if (atributo == 5) {
                     printf("\n");
-                    printf("Você escolheu: Densidade Demográfica\n");
+                    printf("\nOs estados escolhidos:  %s", estado1);
+                    printf(" e %s", estado2);
+                    printf("\n");
+                    printf("O atributo escolhido: Densidade Demográfica\n");
+                    printf("Densidade Demográfica de %s", estado1);
+                    printf(": %.2d \n", densipopula1);
+                    printf("Densidade Demográfica de %s", estado2);
+                    printf(": %.2d \n", densipopula2);
+                    printf("\n");
 
                         if(densipopula1<densipopula2)
                 {
